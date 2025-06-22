@@ -1,0 +1,16 @@
+#!/bin/sh
+
+FILE="$1"
+DIR="$(dirname "$(realpath "$1")")"
+FILENAME="$(basename "$1")"
+
+mkdir -p output
+mkdir -p $HOME/.cache/spleeter
+
+docker run \
+    -v $DIR:/input \
+    -v $PWD/output:/output \
+    -v $HOME/.cache/spleeter:/model \
+    -e MODEL_PATH=/model \
+    deezer/spleeter:conda-2stems \
+    separate --verbose -o /output -i "/input/$FILENAME" 

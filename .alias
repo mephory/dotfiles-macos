@@ -1,0 +1,135 @@
+
+alias vim="nvim"
+
+# Colors
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+alias pacman="pacman --color=auto"
+alias paru="paru --color=auto"
+
+# Shortcuts
+alias l="ls -l"
+alias la="l -a"
+alias tm="tmux"
+alias psg="ps aux | grep -i"
+alias ]="git diff --color"
+alias ]]="git diff --staged --color"
+alias s="git status --short"
+alias s.="du -hs"
+alias ..="cd .."
+alias 2..="cd ../.."
+alias 3..="cd ../../.."
+alias 4..="cd ../../../.."
+alias 5..="cd ../../../../.."
+alias mshare="sshfs mephory:shared ~/shared"
+alias delemp="find . -maxdepth 1 -type d -empty -delete"
+alias fehsort="feh --action1 'mkdir -p ./1 && mv %F ./1' --action2 'mkdir -p ./2 && mv %F ./2' --action3 'mkdir -p ./3 && mv %F ./3' --action4 'mkdir -p ./4 && mv %F ./4' --action5 'mkdir -p ./5 && mv %F ./5' --action6 'mkdir -p ./6 && mv %F ./6' --action7 'mkdir -p ./7 && mv %F ./7' --action8 'mkdir -p ./8 && mv %F ./8' --action9 'mkdir -p ./9 && mv %F ./9'"
+
+# Dice
+alias w2='echo $((RANDOM%2+1))'
+alias w3='echo $((RANDOM%3+1))'
+alias w4='echo $((RANDOM%4+1))'
+alias w5='echo $((RANDOM%5+1))'
+alias w6='echo $((RANDOM%6+1))'
+alias w7='echo $((RANDOM%7+1))'
+alias w8='echo $((RANDOM%8+1))'
+alias w9='echo $((RANDOM%9+1))'
+alias w10='echo $((RANDOM%10+1))'
+alias w11='echo $((RANDOM%11+1))'
+alias w12='echo $((RANDOM%12+1))'
+alias w13='echo $((RANDOM%13+1))'
+alias w14='echo $((RANDOM%14+1))'
+alias w15='echo $((RANDOM%15+1))'
+alias w16='echo $((RANDOM%16+1))'
+alias w17='echo $((RANDOM%17+1))'
+alias w18='echo $((RANDOM%18+1))'
+alias w19='echo $((RANDOM%19+1))'
+alias w20='echo $((RANDOM%20+1))'
+
+# Typos
+alias sl="ls"
+alias Grep="grep"
+alias les="less"
+alias Less="less"
+
+# Other
+alias watch="watch "
+alias -g ,,b='$(git curbranch)'
+
+# Functions
+function drop() {
+    tail -n +$(($1+1)) ${@: 2}
+}
+
+function take() {
+    head -n +$(($1)) ${@: 2}
+}
+
+function pick() {
+    head -n$1 | tail -n1
+}
+
+# Swap two files
+function swapfiles() {
+    if [ $# -ne 2 ]; then
+        echo "USAGE: $0 <file1> <file2>";
+    else
+        mv $1 $1.SWAP;
+        mv $2 $1;
+        mv $1.SWAP $2;
+    fi
+}
+
+# Prepend N to a command to get notified when the command has finished
+function N() {
+    $1 ${@: 2} && \
+        notify-send "$1 finished" "Your job has finished successfully." || \
+        notify-send "$1 failed" "Your job has failed."
+}
+
+function NN() {
+    $1 ${@: 2} && \
+        push -sclassical -p1 "$1 finished" || \
+        push -sclassical -p1 "$1 failed"
+}
+
+# Backup a file
+function backup() {
+    cp $1 $1.$(date +"%Y-%m-%d_%H-%M-%S")
+}
+
+function backup-mv() {
+    mv $1 $1.$(date +"%Y-%m-%d_%H-%M-%S")
+}
+
+function f() {
+    find . -iname "*$1*" ${@: 2}
+}
+
+function cdt() {
+    cd $(mktemp -d -p ~/temp)
+}
+
+function zt() {
+    cd $(mktemp -d -p ~/temp)
+}
+
+function sshtun1() {
+    ssh -R :19101:localhost:$1 mephory
+}
+
+function sshtun2() {
+    ssh -R :19102:localhost:$1 mephory
+}
+
+# Directly cd into ~/code with cdc. It even has tab completion! :-)
+function cdc() { cd ~/code/$1; }
+function _cdc() { _files -W ~/code -/; }
+compdef _cdc cdc
+
+# Directly cd into ~/code with cdc. It even has tab completion! :-)
+function cvc() { cd ~/code/$1; }
+function _cvc() { _files -W ~/code -/; }
+compdef _cvc cvc
+
+alias vialias="$EDITOR ~/.alias && source ~/.alias"

@@ -1,0 +1,81 @@
+[colors.bright]
+black = "$WISP_COLOR8"
+blue = "$WISP_COLOR9"
+cyan = "$WISP_COLOR10"
+green = "$WISP_COLOR11"
+magenta = "$WISP_COLOR12"
+red = "$WISP_COLOR13"
+white = "$WISP_COLOR14"
+yellow = "$WISP_COLOR15"
+
+[colors.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[colors.normal]
+black = "$WISP_COLOR0"
+blue = "$WISP_COLOR1"
+cyan = "$WISP_COLOR2"
+green = "$WISP_COLOR3"
+magenta = "$WISP_COLOR4"
+red = "$WISP_COLOR5"
+white = "$WISP_COLOR6"
+yellow = "$WISP_COLOR7"
+
+[colors.primary]
+background = "$WISP_BACKGROUND"
+bright_foreground = "$WISP_BACKGROUND_SECONDARY"
+dim_foreground = "$WISP_FOREGROUND_SECONDARY"
+foreground = "$WISP_FOREGROUND"
+
+[font]
+size = 16
+
+[font.normal]
+family = "Monaspace Neon"
+style = "Regular"
+
+[font.bold]
+family = "Monaspace Neon"
+style = "Bold"
+
+[font.italic]
+family = "Monaspace Neon"
+style = "Italic"
+
+[hints]
+alphabet = "jfkdls;ahgurieowpq"
+
+[[hints.enabled]]
+command = "open"
+post_processing = true
+regex = '(((?:[.\w\-@~]+)?(?:/[.\w\-@]+)+)|((https?://|git@|git://|ssh://|ftp://|file:///)\S+)|(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})|([A-f0-9:]+:+[A-f0-9:]+[%\w\d])+)'
+
+[hints.enabled.binding]
+key = "X"
+mods = "Control|Shift"
+
+[hints.enabled.mouse]
+enabled = false
+mods = "None"
+
+[[hints.enabled]]
+action = "Copy"
+post_processing = true
+regex = '(((?:[.\w\-@~]+)?(?:/[.\w\-@]+)+)|((https?://|git@|git://|ssh://|ftp://|file:///)\S+)|(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})|([A-f0-9:]+:+[A-f0-9:]+[%\w\d])+)'
+
+[hints.enabled.binding]
+key = "C"
+mods = "Control|Shift"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "None"
+
+[window]
+opacity = 1.0
+blur = true
+
+[window.padding]
+x = 10
+y = 10

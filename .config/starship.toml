@@ -1,0 +1,17 @@
+add_newline = false
+format = '$directory$git_branch$cmd_duration$jobs$character'
+
+[directory]
+truncate_to_repo = false
+truncation_length = 5
+style = 'blue'
+read_only = ' '
+
+[cmd_duration]
+min_time = 30_000
+format = "[$duration](yellow) "
+
+[git_branch]
+symbol = ""
+format = '[\[$symbol$branch\]]($style) '
+style = "purple"

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Simple notify-send wrapper for macOS using osascript
+
+TITLE="Notification"
+MESSAGE=""
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -t|--expire-time) shift ;; # osascript doesn't support timing
+    -u|--urgency) shift ;;     # no urgency support
+    -i|--icon) shift ;;        # no icon support
+    *) 
+      if [[ -z "$MESSAGE" ]]; then
+        MESSAGE="$1"
+      else
+        TITLE="$MESSAGE"
+        MESSAGE="$1"
+      fi
+      ;;
+  esac
+  shift
+done
+
+osascript -e "display notification \"${MESSAGE}\" with title \"${TITLE}\""

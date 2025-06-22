@@ -1,0 +1,16 @@
+sp-1:
+  cmd: "open -na ghostty --args --title=scratchpad-1 --window-height=40 --window-width=120 --shell-integration=none"
+  title: "scratchpad-1"
+sp-2:
+  cmd: "open -na ghostty --args --title=scratchpad-2 --window-height=40 --window-width=120 --shell-integration=none"
+  title: "scratchpad-2"
+music:
+  cmd: "open -a Music"
+  title: "Music"
+  app: "Music"
+notes:
+  cmd: "open -a Notes"
+  app: "Notes"
+1pw:
+  cmd: "open -a 1Password"
+  app: "1Password"

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <filename>"
+    exit 1
+fi
+
+filename="$1"
+
+if [[ "$filename" == *"#"* ]]; then
+    base="${filename//#/}"  # Remove # from filename
+    prefix="${filename%%#*}" # Part before #
+    suffix="${filename##*#}" # Part after #
+    number=1
+    while [ -e "${prefix}${number}${suffix}" ]; do
+        ((number++))
+    done
+    echo "${prefix}${number}${suffix}"
+else
+    base="${filename%.*}"
+    ext="${filename##*.}"
+    count=1
+    while [ -e "$base ($count).$ext" ]; do
+        ((count++))
+    done
+    echo "$base ($count).$ext"
+fi

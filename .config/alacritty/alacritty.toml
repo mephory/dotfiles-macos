@@ -1,0 +1,81 @@
+[colors.bright]
+black = "#6c6f85"
+blue = "#1e66f5"
+cyan = "#179299"
+green = "#40a02b"
+magenta = "#ea76cb"
+red = "#d20f39"
+white = "#bcc0cc"
+yellow = "#df8e1d"
+
+[colors.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[colors.normal]
+black = "#5c5f77"
+blue = "#1e66f5"
+cyan = "#179299"
+green = "#40a02b"
+magenta = "#ea76cb"
+red = "#d20f39"
+white = "#acb0be"
+yellow = "#df8e1d"
+
+[colors.primary]
+background = "#eff1f5"
+bright_foreground = "#24273a"
+dim_foreground = "#303446"
+foreground = "#4c4f69"
+
+[font]
+size = 16
+
+[font.normal]
+family = "Monaspace Neon"
+style = "Regular"
+
+[font.bold]
+family = "Monaspace Neon"
+style = "Bold"
+
+[font.italic]
+family = "Monaspace Neon"
+style = "Italic"
+
+[hints]
+alphabet = "jfkdls;ahgurieowpq"
+
+[[hints.enabled]]
+command = "open"
+post_processing = true
+regex = '(((?:[.\w\-@~]+)?(?:/[.\w\-@]+)+)|((https?://|git@|git://|ssh://|ftp://|file:///)\S+)|(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})|([A-f0-9:]+:+[A-f0-9:]+[%\w\d])+)'
+
+[hints.enabled.binding]
+key = "X"
+mods = "Control|Shift"
+
+[hints.enabled.mouse]
+enabled = false
+mods = "None"
+
+[[hints.enabled]]
+action = "Copy"
+post_processing = true
+regex = '(((?:[.\w\-@~]+)?(?:/[.\w\-@]+)+)|((https?://|git@|git://|ssh://|ftp://|file:///)\S+)|(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})|([A-f0-9:]+:+[A-f0-9:]+[%\w\d])+)'
+
+[hints.enabled.binding]
+key = "C"
+mods = "Control|Shift"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "None"
+
+[window]
+opacity = 1.0
+blur = true
+
+[window.padding]
+x = 10
+y = 10
