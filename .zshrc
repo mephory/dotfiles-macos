@@ -14,6 +14,9 @@ export TERM="xterm-256color"
 export DISPLAY=:0 # MacOS
 export LANG=en_US.UTF-8 # MacOS
 
+export EDITOR="nvim"
+export PAGER="less"
+export TERMINAL="alacritty"
 export GOPATH="$HOME/.go"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/bin"
