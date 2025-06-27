@@ -13,5 +13,5 @@ format = "[$duration](yellow) "
 
 [git_branch]
 symbol = ""
-format = '[\[$symbol$branch\]]($style) '
+format = '[\[$branch\]]($style) '
 style = "purple"
