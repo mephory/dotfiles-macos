@@ -1,8 +1,6 @@
 #!/bin/sh
 
 if [ "$DARKMODE" = "0" ]; then
-    # cp ~/.config/alacritty/alacritty.light.toml ~/.config/alacritty/alacritty.toml
-    # cp ~/.config/ghostty/config.light ~/.config/ghostty/config
     export WISP_BACKGROUND="#eff1f5"
     export WISP_FOREGROUND="#4c4f69"
     export WISP_BACKGROUND_SECONDARY="#24273a"
@@ -24,8 +22,6 @@ if [ "$DARKMODE" = "0" ]; then
     export WISP_COLOR14="#bcc0cc"
     export WISP_COLOR15="#df8e1d"
 else
-    # cp ~/.config/alacritty/alacritty.dark.toml ~/.config/alacritty/alacritty.toml
-    # cp ~/.config/ghostty/config.dark ~/.config/ghostty/config
     export WISP_BACKGROUND="#1e1e2e"
     export WISP_FOREGROUND="#cdd6f4"
     export WISP_BACKGROUND_SECONDARY="#24273a"

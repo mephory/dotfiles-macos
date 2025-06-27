@@ -1,32 +1,32 @@
 [colors.bright]
-black = "#6c6f85"
-blue = "#1e66f5"
-cyan = "#179299"
-green = "#40a02b"
-magenta = "#ea76cb"
-red = "#d20f39"
-white = "#bcc0cc"
-yellow = "#df8e1d"
+black = "#585b70"
+blue = "#89b4fa"
+cyan = "#94e2d5"
+green = "#a6e3a1"
+magenta = "#f5c2e7"
+red = "#f38ba8"
+white = "#a6adc8"
+yellow = "#f9e2af"
+
+[colors.normal]
+black = "#45475a"
+blue = "#89b4fa"
+cyan = "#94e2d5"
+green = "#a6e3a1"
+magenta = "#f5c2e7"
+red = "#f38ba8"
+white = "#a6adc8"
+yellow = "#f9e2af"
+
+[colors.primary]
+background = "#1e1e2e"
+bright_foreground = "#24273a"
+dim_foreground = "#303446"
+foreground = "#cdd6f4"
 
 [colors.cursor]
 cursor = "CellForeground"
 text = "CellBackground"
-
-[colors.normal]
-black = "#5c5f77"
-blue = "#1e66f5"
-cyan = "#179299"
-green = "#40a02b"
-magenta = "#ea76cb"
-red = "#d20f39"
-white = "#acb0be"
-yellow = "#df8e1d"
-
-[colors.primary]
-background = "#eff1f5"
-bright_foreground = "#24273a"
-dim_foreground = "#303446"
-foreground = "#4c4f69"
 
 [font]
 size = 16

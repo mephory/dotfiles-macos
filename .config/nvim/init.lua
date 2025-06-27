@@ -48,17 +48,18 @@ vim.g.ftplugin_sql_omni_key = '<C-j>'
 
 -- autoformat go
 vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = { "*.go" },
-    buffer = buffer,
-    callback = function()
-        vim.lsp.buf.format { async = false }
-    end
+  pattern = { "*.go" },
+  buffer = buffer,
+  callback = function()
+    vim.lsp.buf.format { async = false }
+  end
 })
 
 -- Load custom modules
 require('keymaps')
 require('highlights')
 require('notes')
+
 require('treesitter').setup {
   ensure_installed = {
     'c',
@@ -68,9 +69,10 @@ require('treesitter').setup {
     'python',
     'ruby',
     'rust',
-    'typescript'
+    'typescript',
   }
 }
+
 require('lsp').setup {
   servers = {
     'templ',
@@ -81,7 +83,7 @@ require('lsp').setup {
     'gopls',
     'solargraph',
     'terraformls',
-    'omnisharp_mono'
+    'vue_ls',
   }
 }
 
@@ -101,9 +103,7 @@ require('lsp').setup {
 -- })
 
 -- Configure plugins
-require("catppuccin").setup({
-  transparent_background = true,
-})
+require("catppuccin").setup()
 
 require('lualine').setup {
   options = {
@@ -156,4 +156,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
-vim.cmd [[colorscheme catppuccin-mocha]]
+vim.cmd [[colorscheme catppuccin]]

@@ -1,12 +1,12 @@
 sp-1:
   # cmd: "open -na ghostty --args --title=scratchpad-1 --shell-integration=none --macos-titlebar-proxy-icon=hidden --shell-integration-features=no-title"
-  cmd: "open -n /Applications/Alacritty.app --args --title scratchpad-1 -o window.dimensions.columns=120 -o window.dimensions.lines=40"
+  cmd: "open -n /Applications/Alacritty.app --args --title scratchpad-1"
   title: "scratchpad-1"
   width: 1146
   height: 707
 sp-2:
   # cmd: "open -na ghostty --args --title=scratchpad-2 --shell-integration=none --macos-titlebar-proxy-icon=hidden --shell-integration-features=no-title"
-  cmd: "open -n /Applications/Alacritty.app --args --title scratchpad-2 -o window.dimensions.columns=120 -o window.dimensions.lines=40"
+  cmd: "open -n /Applications/Alacritty.app --args --title scratchpad-2"
   title: "scratchpad-2"
   width: 1146
   height: 707
@@ -14,12 +14,18 @@ music:
   cmd: "open -a Music"
   title: "Music"
   app: "Music"
+  width: 1546
+  height: 907
 notes:
   cmd: "open -a Notes"
   app: "Notes"
+  width: 1546
+  height: 907
 1pw:
   cmd: "open -a 1Password"
   app: "1Password"
+  width: 1146
+  height: 707
 finder:
   cmd: "open -a Finder"
   app: "Finder"

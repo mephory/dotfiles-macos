@@ -8,10 +8,6 @@ red = "$WISP_COLOR13"
 white = "$WISP_COLOR14"
 yellow = "$WISP_COLOR15"
 
-[colors.cursor]
-cursor = "CellForeground"
-text = "CellBackground"
-
 [colors.normal]
 black = "$WISP_COLOR0"
 blue = "$WISP_COLOR1"
@@ -27,6 +23,10 @@ background = "$WISP_BACKGROUND"
 bright_foreground = "$WISP_BACKGROUND_SECONDARY"
 dim_foreground = "$WISP_FOREGROUND_SECONDARY"
 foreground = "$WISP_FOREGROUND"
+
+[colors.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
 
 [font]
 size = 16

@@ -1,5 +1,24 @@
 local M = {}
 
+
+vim.lsp.config('ts_ls', {
+    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+    init_options = {
+      plugins = {
+        {
+          name = '@vue/typescript-plugin',
+          location = vim.fn.stdpath 'data' .. '/mason/packages/vue-language-server/node_modules/@vue/language-server',
+          languages = { 'vue' },
+        },
+      },
+      preferences = {
+        includeCompletionsForModuleExports = true,
+        includeCompletionsForImportStatements = true,
+        importModuleSpecifier = "non-relative",
+      },
+    },
+})
+
 function M.setup(user_data)
   local on_attach = function(args)
     local nmap = function(keys, func)
@@ -23,7 +42,7 @@ function M.setup(user_data)
     -- See `:help K` for why this keymap
     nmap('K', vim.lsp.buf.hover)
     nmap('<C-k>', vim.lsp.buf.signature_help)
-    imap('<C-k>', vim.lsp.buf.signature_help)
+    imap('<C-S-k>', vim.lsp.buf.signature_help)
 
     -- Lesser used LSP functionality
     nmap('gD', vim.lsp.buf.declaration)
@@ -98,5 +117,17 @@ function M.setup(user_data)
     callback = on_attach,
   })
 end
+
+-- Add border to floating windows
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = "rounded"
+  opts.max_width = opts.max_with or math.floor(vim.o.columns * 0.7)
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+vim.diagnostic.config({
+  float = { border = "rounded" },
+})
 
 return M

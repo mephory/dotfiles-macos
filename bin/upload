@@ -5,24 +5,14 @@
 # Usage: upload [OPTION]... FILE
 #
 # Options:
-#   -l, --list          list uploaded file
-#   -c, --copy=NUM      copy url for uploaded file
 #   -n, --name=NAME     use NAME as filename
 #   -p, --private       upload a private file
 #   -t, --temporary     upload a temporary file
 #   -h, --help          display this help
-#   -y, --notify        send desktop notification when finished
 
 
 while [ "$#" -gt 0 ]; do
     case "$1" in
-        -l) ARG_LIST=true; shift 1;;
-        --list) ARG_LIST=true; shift 1;;
-
-        -c) ARG_COPY="$2"; shift 2;;
-        -c*) ARG_COPY="${1:2}"; shift 1;;
-        --copy=*) ARG_COPY="${1#*=}"; shift 1;;
-
         -n) ARG_NAME="$2"; shift 2;;
         -n*) ARG_NAME="${1:2}"; shift 1;;
         --name=*) ARG_NAME="${1#*=}"; shift 1;;
@@ -39,9 +29,6 @@ while [ "$#" -gt 0 ]; do
         -s) ARG_SILENT=true; shift 1 ;;
         --silent) ARG_SILENT=true; shift 1;;
 
-        -y) ARG_NOTIFY=true; shift 1 ;;
-        --notify) ARG_NOTIFY=true; shift 1;;
-
         -h) ARG_HELP=true; shift 1;;
         --help) ARG_HELP=true; shift 1;;
 
@@ -53,8 +40,6 @@ function print_usage() {
     echo "Usage: upload [OPTION]... FILE
 
 Options:
-  -l, --list          list uploaded files
-  -c, --copy=NUM      copy url for uploaded file
   -n, --name=NAME     use NAME as filename
   -p, --private       upload a private file
   -t, --temporary     upload a temporary file
@@ -121,9 +106,5 @@ fi
 echo "$ARG_FILE | $URL" >> $HOME/.uploads
 echo $URL
 echo $URL | pbcopy 2>/dev/null
-
-if [ -n "$ARG_NOTIFY" ]; then
-    notify-send "Upload finished" "URL copied to clipboard"
-fi
 
 exit 0;
