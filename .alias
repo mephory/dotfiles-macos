@@ -55,6 +55,7 @@ alias Less="less"
 # Other
 alias watch="watch "
 alias -g ,,b='$(git curbranch)'
+alias chafa="TERM=xterm-kitty chafa"
 
 # Functions
 function drop() {

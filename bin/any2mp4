@@ -1,0 +1,7 @@
+#!/bin/sh
+
+ffmpeg -i "$1" \
+  -c:v h264_videotoolbox -b:v 5000k \
+  -c:a aac -b:a 192k -movflags +faststart \
+  "${1%.*}.mp4"
+

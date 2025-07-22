@@ -31,6 +31,7 @@ function M.setup(user_data)
 
     nmap('<leader>rn', vim.lsp.buf.rename)
     nmap('<leader>ca', vim.lsp.buf.code_action)
+    nmap('<leader>o', function() vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true }) end)
 
     nmap('gd', vim.lsp.buf.definition)
     nmap('gr', require('telescope.builtin').lsp_references)

@@ -1,12 +1,12 @@
 sp-1:
-  # cmd: "open -na ghostty --args --title=scratchpad-1 --shell-integration=none --macos-titlebar-proxy-icon=hidden --shell-integration-features=no-title"
-  cmd: "open -n /Applications/Alacritty.app --args --title scratchpad-1"
+  cmd: "open -na ghostty --args --title=scratchpad-1 --shell-integration=none --macos-titlebar-proxy-icon=hidden --shell-integration-features=no-title"
+  # cmd: "open -n /Applications/Alacritty.app --args --title scratchpad-1"
   title: "scratchpad-1"
   width: 1146
   height: 707
 sp-2:
-  # cmd: "open -na ghostty --args --title=scratchpad-2 --shell-integration=none --macos-titlebar-proxy-icon=hidden --shell-integration-features=no-title"
-  cmd: "open -n /Applications/Alacritty.app --args --title scratchpad-2"
+  cmd: "open -na ghostty --args --title=scratchpad-2 --shell-integration=none --macos-titlebar-proxy-icon=hidden --shell-integration-features=no-title"
+  # cmd: "open -n /Applications/Alacritty.app --args --title scratchpad-2"
   title: "scratchpad-2"
   width: 1146
   height: 707
@@ -31,3 +31,8 @@ finder:
   app: "Finder"
   width: 1146
   height: 707
+eagle:
+  cmd: "open -a Eagle"
+  app: "Eagle"
+  width: 1546
+  height: 907

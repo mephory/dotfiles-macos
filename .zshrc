@@ -23,6 +23,10 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$GOPATH/bin"
 export TYPST_PACKAGE_PATH="$HOME/.local/share/typst/packages"
 
+# Fake kitty terminfo
+echo 'xterm-kitty|Minimal dummy for TERM compatibility:\
+    :tc=xterm-256color:' | tic -
+
 # hash dirs
 hash -d c="$HOME/Library/Mobile Documents/com~apple~CloudDocs" # MacOS
 

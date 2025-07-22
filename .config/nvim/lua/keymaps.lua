@@ -65,6 +65,7 @@ vim.keymap.set('n', "''e", ':e <C-r>=resolve(expand("~/.config/nvim/lua"))<cr>/<
 vim.keymap.set('n', "''a", ':e `=resolve(expand("~/.config/aerospace/aerospace.toml"))`<cr>')
 vim.keymap.set('n', "''s", ':e `=resolve(expand("~/.config/aeroscratch/aeroscratch.yml"))`<cr>G')
 vim.keymap.set('n', "''z", ':e `=resolve(expand("~/.zshrc"))`<cr>')
+vim.keymap.set('n', "''g", ':e `=resolve(expand("~/.config/ghostty/config"))`<cr>')
 
 -- :e, :r, :w relative to current file
 vim.keymap.set('n', '\\e', ':e <C-r>=expand("%:h")<cr>/')

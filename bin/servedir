@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+
+import http.server
+import socketserver
+import argparse
+
+class IPRestrictedHandler(http.server.SimpleHTTPRequestHandler):
+    def __init__(self, *args, allowed_ip=None, **kwargs):
+        self.allowed_ip = allowed_ip
+        super().__init__(*args, **kwargs)
+
+    def verify_request(self, request, client_address):
+        if self.allowed_ip is None:
+            return True
+        return client_address[0] == self.allowed_ip
+
+def make_handler(allowed_ip):
+    class CustomHandler(IPRestrictedHandler):
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, allowed_ip=allowed_ip, **kwargs)
+    return CustomHandler
+
+def main():
+    parser = argparse.ArgumentParser(description="Serve current directory over HTTP, optionally restricting to a specific IP.")
+    parser.add_argument("--port", type=int, default=8001, help="Port to listen on (default: 8001)")
+    parser.add_argument("--ip", help="Allowed client IP address (optional)")
+    args = parser.parse_args()
+
+    handler_class = make_handler(args.ip)
+    with socketserver.TCPServer(("", args.port), handler_class) as httpd:
+        print(f"Serving on port {args.port} {'(restricted to ' + args.ip + ')' if args.ip else '(open to all)'}")
+        try:
+            httpd.serve_forever()
+        except KeyboardInterrupt:
+            print("\nShutting down server.")
+            httpd.shutdown()
+
+if __name__ == "__main__":
+    main()
+

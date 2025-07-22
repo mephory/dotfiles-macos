@@ -9,7 +9,7 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = ['exec-and-forget /Users/mephory/bin/aeroscratch swipe-to-switch']
 
 # Start AeroSpace at login
 start-at-login = false
@@ -167,6 +167,7 @@ alt-v = 'exec-and-forget /Users/mephory/bin/aeroscratch toggle sp-1'
 alt-c = 'exec-and-forget /Users/mephory/bin/aeroscratch toggle sp-2'
 alt-b = 'exec-and-forget /Users/mephory/bin/aeroscratch toggle 1pw'
 alt-x = 'exec-and-forget /Users/mephory/bin/aeroscratch toggle finder'
+alt-r = 'exec-and-forget /Users/mephory/bin/aeroscratch toggle eagle'
 alt-shift-a = 'exec-and-forget /Users/mephory/bin/aeroscratch add-focused dyn1'
 alt-a = 'exec-and-forget /Users/mephory/bin/aeroscratch toggle dyn1'
 
@@ -174,14 +175,13 @@ alt-g = 'exec-and-forget /Users/mephory/bin/aeroscratch center-window'
 alt-f = 'exec-and-forget /Users/mephory/bin/aeroscratch resize-center-window 1146 707'
 alt-shift-f = 'exec-and-forget /Users/mephory/bin/aeroscratch resize-center-window 1546 907'
 
-alt-shift-enter = 'exec-and-forget alacritty'
-# alt-shift-enter = 'exec-and-forget open -na ghostty'
+# alt-shift-enter = 'exec-and-forget alacritty'
+alt-shift-enter = 'exec-and-forget open -na ghostty'
 alt-space = 'layout tiles horizontal vertical'
 alt-shift-space = 'flatten-workspace-tree'
 alt-shift-c = 'close'
 alt-w = 'focus-monitor "LG ULTRAGEAR"'
 alt-e = 'focus-monitor "Built-in"'
-alt-r = 'focus-monitor "Sidecar"'
 alt-shift-w = 'move-node-to-monitor prev'
 alt-shift-e = 'move-node-to-monitor next'
 alt-ctrl-w = 'move-workspace-to-monitor prev'

@@ -1,0 +1,21 @@
+font-family = "Monaspace Neon"
+font-family-bold = "Monaspace Neon"
+font-family-italic = "Monaspace Neon"
+font-thicken = true
+font-size = 16
+font-feature = "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'liga'"
+theme = dark:catppuccin-mocha,light:catppuccin-latte
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+window-padding-x = 10
+window-padding-y = 10
+macos-option-as-alt = false
+
+keybind = cmd+,=reload_config
+quit-after-last-window-closed=true
+
+# custom-shader = ~/.config/ghostty/shaders/bettercrt.glsl
+# custom-shader = ~/.config/ghostty/shaders/retro-terminal.glsl
+# custom-shader = ~/.config/ghostty/shaders/bloom.glsl
+# custom-shader-animation = true
